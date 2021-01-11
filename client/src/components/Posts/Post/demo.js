@@ -5,7 +5,7 @@ import ReactModal from 'react-modal';
 import {  Button } from '@material-ui/core';
 import VisibilityTwoToneIcon from '@material-ui/icons/VisibilityTwoTone';
 
-class ExampleApp extends React.Component {
+class Demo extends React.Component {
   constructor () {
     super();
     this.state = {
@@ -39,6 +39,5 @@ class ExampleApp extends React.Component {
   }
 }
 
-const props = {};
 
-export default  props;
+export default Demo;
