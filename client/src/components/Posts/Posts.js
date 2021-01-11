@@ -6,7 +6,19 @@ import Post from './Post/Post';
 import useStyles from './styles';
 
 const Posts = ({setCurrentId}) => {
-    const posts = useSelector((state) => state.posts);
+    // const posts = useSelector((state) => state.posts);
+    const posts = [
+        {
+            _id: 1,
+            post: {
+                selectedFile: '567',
+                title: "test",
+                writer: '2345',
+                blog: '2345',
+                tags: []
+            }
+        }
+    ];
     const classes =useStyles();
     console.log(posts);
     return (
