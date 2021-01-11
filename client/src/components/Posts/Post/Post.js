@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography} from '@material-ui/core';
-import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import VisibilityTwoToneIcon from '@material-ui/icons/VisibilityTwoTone';
 import DeleteIcon from '@material-ui/icons/Delete';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
@@ -8,7 +7,8 @@ import moment from 'moment';
 import useStyles from './styles';
 import {useDispatch } from 'react-redux';
 import {deletePost} from '../../../actions/posts';
-
+import props from './demo';
+import ReactDOM from 'react-dom';
 
 const  ellipsify = (str) => {
   if (str.length > 10) {
@@ -46,15 +46,21 @@ const Post = ({ post, setCurrentId }) => {
           <Typography variant="body2" color="textSecondary" component="p">{ellipsify(post.blog)}</Typography>
         </CardContent>
         <CardActions className={classes.cardActions}>
-          <Button type="button" size="small" color="primary"  ><VisibilityTwoToneIcon fontSize="small" /> View {post.viewCount} </Button>
- 
+         
+          <div className="main">
+          </div>
          
           <Button size="small" color="primary" onClick={() => dispatch(deletePost(post._id))} ><DeleteIcon fontSize="small" /> Delete</Button>
         </CardActions>         
       </Card>
       
     );
-
+    
 }
+
+
+ReactDOM.render( {...props} , document.getElementsByClassName('main'));
+
+
 export default Post;
 
