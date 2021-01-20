@@ -15,9 +15,10 @@ export const getPosts = async (req, res) => {
     }
 }
 
-export const viewPost = async (req, res) => { 
+export const viewPost = async (req, res) => {
+    const { id: _id } = req.params;
     try {
-        const postMessages = await PostMessage.findById(id);
+        const postMessages = await PostMessage.findById(_id);
                 
         res.status(200).json(postMessages);
     } catch (error) {

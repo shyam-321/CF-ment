@@ -20,10 +20,10 @@ const App =() => {
     
     return(
         <Container maxidth="lg">
-            <AppBar className= {classes.appBar} color="inherit">
+            <div className= {classes.appBar} color="inherit">
                 <Typography className={classes.heading} variant="h2" align="center">Blogger</Typography>
                 <img className={classes.image} src={blogger} alt="blogger" align="center" height="60" />
-            </AppBar>
+            </div>
             <Grow in>
                 <Container>
                     <Grid container justify="space-between" alignItems="stretch" spacing={8}>

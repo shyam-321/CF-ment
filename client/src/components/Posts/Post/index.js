@@ -45,7 +45,7 @@ const Post = ({ post, setCurrentId }) => {
           <Typography variant="body2" color="textSecondary" component="p">{ellipsify(post.blog)}</Typography>
         </CardContent>
         <CardActions className={classes.cardActions}>
-          <ViewDetails id = {post._id}/>
+          <ViewDetails post = {post}/>
           <Button size="small" color="primary" onClick={() => dispatch(deletePost(post._id))} ><DeleteIcon fontSize="small" /> Delete</Button>
         </CardActions>         
       </Card>
