@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import VisibilityTwoToneIcon from '@material-ui/icons/VisibilityTwoTone';
 import { viewPost } from '../../../actions/posts';
