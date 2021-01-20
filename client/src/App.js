@@ -7,9 +7,7 @@ import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
 import blogger from './images/blogger.png';
 import useStyles from './styles';
-
-
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App =() => {
     const [currentId, setCurrentId ]= useState(null);
@@ -22,11 +20,10 @@ const App =() => {
     
     return(
         <Container maxidth="lg">
-            <AppBar className= {classes.appBar} postition ="static" color="inherit">
+            <AppBar className= {classes.appBar} color="inherit">
                 <Typography className={classes.heading} variant="h2" align="center">Blogger</Typography>
                 <img className={classes.image} src={blogger} alt="blogger" align="center" height="60" />
             </AppBar>
-            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
             <Grow in>
                 <Container>
                     <Grid container justify="space-between" alignItems="stretch" spacing={8}>

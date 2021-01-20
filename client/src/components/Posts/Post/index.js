@@ -7,9 +7,9 @@ import moment from 'moment';
 import useStyles from './styles';
 import {useDispatch } from 'react-redux';
 import {deletePost} from '../../../actions/posts';
-import Demo from './demo';
+import ViewDetails from './view-details';
 
-const  ellipsify = (str) => {
+const ellipsify = (str) => {
   if (str.length > 10) {
       return (str.substring(0, 10) + "...");
   }
@@ -45,9 +45,7 @@ const Post = ({ post, setCurrentId }) => {
           <Typography variant="body2" color="textSecondary" component="p">{ellipsify(post.blog)}</Typography>
         </CardContent>
         <CardActions className={classes.cardActions}>
-         
-          <Demo />
-         
+          <ViewDetails id = {post._id}/>
           <Button size="small" color="primary" onClick={() => dispatch(deletePost(post._id))} ><DeleteIcon fontSize="small" /> Delete</Button>
         </CardActions>         
       </Card>
