@@ -20,7 +20,7 @@ const ViewDetails = ({ post }) => {
       <Button type="button" size="small" color="primary" onClick={() => handleOpenModal()}><VisibilityTwoToneIcon fontSize="small" /> View  </Button>
       {
         post ?
-          <Modal show={showModal} onHide={handleCloseModal}>
+          <Modal show={showModal} onHide={handleCloseModal} size="lg">
             <Modal.Header closeButton>
               <Modal.Title>Modal heading</Modal.Title>
             </Modal.Header>
