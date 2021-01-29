@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-
+import {CardMedia} from '@material-ui/core';
+import useStyles from './styles';
 import VisibilityTwoToneIcon from '@material-ui/icons/VisibilityTwoTone';
 import { Modal, Button } from 'react-bootstrap';
+import moment from 'moment';
+
 
 const ViewDetails = ({ post }) => {
   const [showModal, setshowModal] = useState(false);
@@ -14,7 +16,7 @@ const ViewDetails = ({ post }) => {
   const handleCloseModal = () => {
     setshowModal(false);
   }
-
+  const classes = useStyles();
   return (
     <div>
       <Button type="button" size="small" color="primary" onClick={() => handleOpenModal()}><VisibilityTwoToneIcon fontSize="small" /> View  </Button>
@@ -22,12 +24,16 @@ const ViewDetails = ({ post }) => {
         post ?
           <Modal show={showModal} onHide={handleCloseModal}>
             <Modal.Header closeButton>
-              <Modal.Title>Modal heading</Modal.Title>
+              <Modal.Title>{post.title}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              Title: {post.title}
-              Blog: {post.blog}
-              Writer: {post.writer}
+            <CardMedia className={classes.media} image={post.selectedFile } title={post.title} />
+              
+              <br></br>
+              <p className="font-italic">Posted on:<a href="#">{moment(post.createdAt).format('MMMM Do YYYY')}</a></p>
+              <p>{post.blog}</p>
+              <br></br>
+              <p className="font-italic">Posted by:<a href="#"> {post.writer}</a></p>
             </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleCloseModal}>

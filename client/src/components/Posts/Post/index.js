@@ -1,17 +1,17 @@
 import React from 'react';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography} from '@material-ui/core';
-import VisibilityTwoToneIcon from '@material-ui/icons/VisibilityTwoTone';
 import DeleteIcon from '@material-ui/icons/Delete';
-import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+import EditTwoToneIcon from '@material-ui/icons/EditTwoTone';
 import moment from 'moment';
 import useStyles from './styles';
 import {useDispatch } from 'react-redux';
 import {deletePost} from '../../../actions/posts';
 import ViewDetails from './view-details';
+//import AskDel from './ask-delete';
 
 const ellipsify = (str) => {
-  if (str.length > 10) {
-      return (str.substring(0, 10) + "...");
+  if (str.length > 60) {
+      return (str.substring(0, 60) + "...");
   }
   else {
   return str;
@@ -34,7 +34,7 @@ const Post = ({ post, setCurrentId }) => {
             style={{ color: 'white' }} 
             size="small" 
             onClick={()=>setCurrentId(post._id)}>
-            <MoreHorizIcon fontSize="default" />
+            <EditTwoToneIcon fontSize="default" />Edit
           </Button>
         </div>
         <div className={classes.details}>
@@ -46,6 +46,7 @@ const Post = ({ post, setCurrentId }) => {
         </CardContent>
         <CardActions className={classes.cardActions}>
           <ViewDetails post = {post}/>
+          {/*<AskDel posts={post._id}/>*/}
           <Button size="small" color="primary" onClick={() => dispatch(deletePost(post._id))} ><DeleteIcon fontSize="small" /> Delete</Button>
         </CardActions>         
       </Card>

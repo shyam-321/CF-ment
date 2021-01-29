@@ -42,6 +42,7 @@ const Form = ({ currentId, setCurrentId }) => {
           </Typography>
 
         <TextField
+          required
           name="creator"
           variant="outlined"
           label="Writer"
@@ -51,6 +52,7 @@ const Form = ({ currentId, setCurrentId }) => {
         />
 
         <TextField
+          required
           name="title"
           variant="outlined"
           label="Title"
@@ -60,17 +62,19 @@ const Form = ({ currentId, setCurrentId }) => {
         />
 
         <TextField
+          required
           name="blog"
           variant="outlined"
           label="Blog"
           fullWidth
           multiline
-          rows={4}
+          rows={7}
           value={postData.blog}
           onChange={(e) => setPostData({ ...postData, blog: e.target.value })}
         />
 
         <TextField
+          required
           name="tags"
           variant="outlined"
           label="Tags (coma separated)"
